@@ -1,3 +1,6 @@
+'''Main Code, here we'll extract all the URLs of each prodcut by scraping the webpage
+and then send them to the DB in MySQL.'''
+
 # Importando cosas del Beautiful Soup 4.
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
