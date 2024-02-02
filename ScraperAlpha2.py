@@ -4,6 +4,23 @@ products from the DB in mySQL and then returning this same Data to the same DB.'
 # Importando cosas del Beautiful Soup 4.
 import requests as req
 from bs4 import BeautifulSoup
+# Importando librería para conectarse con MySQL.
+import mysql.connector as sqlcn
+
+# Datos de configuración para conectarse a MySQL.
+config = {
+    'user': 'tu_usuario',
+    'password': 'tu_contraseña',
+    'host': 'localhost',
+    'database': 'tu_base_de_datos',
+    'raise_on_warnings': True
+}
+
+# Crear una conexión a la base de datos
+conexion = sqlcn.connect(**config)
+
+# Crear un cursor para ejecutar comandos SQL
+cursor = conexion.cursor()
 
 # Variable ejemplo de las urls.
 todas_las_urls = []

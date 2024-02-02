@@ -5,6 +5,23 @@ and then send them to the DB in MySQL.'''
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import time
+# Importando librería para conectarse con MySQL.
+import mysql.connector as sqlcn
+
+# Datos de configuración para conectarse a MySQL.
+config = {
+    'user': 'tu_usuario',
+    'password': 'tu_contraseña',
+    'host': 'localhost',
+    'database': 'tu_base_de_datos',
+    'raise_on_warnings': True
+}
+
+# Crear una conexión a la base de datos
+conexion = sqlcn.connect(**config)
+
+# Crear un cursor para ejecutar comandos SQL
+cursor = conexion.cursor()
 
 # Session no sé.
 session = HTMLSession()
