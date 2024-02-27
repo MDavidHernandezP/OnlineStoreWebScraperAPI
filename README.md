@@ -92,6 +92,14 @@ make sure the method is , once it connects you  will sea a menu below, where you
 4. Push the branch (`git push origin feature/nueva-caracteristica`).
 5. Open a pull request.
 
+## Contributors
+
+HERNÁNDEZ PANTOJA MARIO DAVID
+HERNÁNDEZ WIDMAN GERARDO
+JANETH GUADALUPE VALDIVIA PEREZ
+ESTHER GUADALUPE APAZA HACHO
+SERGIO JOHANAN BARRERA CHAN
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley) file for details.
