@@ -1,4 +1,4 @@
-[![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg)](https://www.python.org/)
+[![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg)]
 
 [![PyPI](https://img.shields.io/pypi/v/requests/2.28.1.svg)](https://pypi.org/project/requests/)
 
