@@ -31,6 +31,7 @@ The Flask application that serves as the API endpoint. It includes routes for sc
 - [API Endpoint](#api-endpoint)
 - [Examples](#examples)
 - [Contributions](#contributions)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## Installation
