@@ -84,7 +84,7 @@ make sure the method is , once it connects you  will sea a menu below, where you
         }
     }
     ```
-
+![](https://global.discourse-cdn.com/getpostman/original/2X/d/de461711cd62edb4f7e8f170c6a21aa0fe304fea.png)
 ## Contributions
 
 1. Fork the project.
