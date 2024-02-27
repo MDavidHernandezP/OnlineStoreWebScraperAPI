@@ -1,3 +1,9 @@
+[![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png)](https://www.python.org/)
+
+[![PyPI](https://img.shields.io/pypi/v/requests/2.28.1.svg)](https://pypi.org/project/requests/)
+
+[![GitHub](https://img.shields.io/github/stars/psf/requests/stargazers.svg)](https://github.com/psf/requests)
+
 # Dockerized Async Web Scraper with Flask API
 
 This project implements a Dockerized environment for an asynchronous web scraper using Python and Flask. The scraper is designed to extract specific data from Mercado Libre product pages.
