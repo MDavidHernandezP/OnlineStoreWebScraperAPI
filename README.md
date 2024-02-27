@@ -50,8 +50,8 @@ The Flask application that serves as the API endpoint. It includes routes for sc
 
 ## Usage
 
-After successful installation, the Flask application will be accessible at `http://localhost:6000` use Postman, put the direction the name, then "/" and the name of the endpoint below, 
-make sure the method is post, then enter to to body and then to raw and put the json with link and finally press send.
+After successful installation, the Flask application will be accessible at `http://localhost:6000`, use [postman](enlace-a-tu-licencia), put the direction the name, then "/" and the name of the endpoint below, 
+make sure the method is post, then enter to body and then to raw and put the json with link and finally press send.
 
 ## API Endpoint
 
