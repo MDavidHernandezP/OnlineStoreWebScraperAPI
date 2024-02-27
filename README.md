@@ -1,8 +1,10 @@
-[![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png)](https://www.python.org/)
 
-[![PyPI](https://img.shields.io/pypi/v/requests/2.28.1.svg)](https://pypi.org/project/requests/)
-
-[![GitHub](https://img.shields.io/github/stars/psf/requests/stargazers.svg)](https://github.com/psf/requests)
+[![Python](https://img.shields.io/badge/python-3.12.1-red.svg)](https://www.python.org/)
+[![Postman](https://img.shields.io/badge/Postman-v10.8.1-orange.svg)](https://www.postman.com/)
+[![Download Postman](https://img.shields.io/badge/Download-Postman-yellow.svg)](https://www.postman.com/downloads/)
+[![Docker](https://img.shields.io/badge/Docker-v20.10.17-purple.svg)](https://www.docker.com/)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-v20.10.17-green.svg)](https://hub.docker.com/)
+[![Docker Docs](https://img.shields.io/badge/Docker%20Docs-v20.10.17-gold.svg)](https://docs.docker.com/)
 
 # Dockerized Async Web Scraper with Flask API
 
