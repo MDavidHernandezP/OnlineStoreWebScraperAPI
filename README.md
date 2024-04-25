@@ -47,7 +47,7 @@ The Flask application that serves as the API endpoint. It includes routes for sc
 1. Clone the repository:
 
     ```bash
-    git clone -b WH/scraperbase git@github.com:MDavidHernandezP/WSMercadoLibre.git
+    git clone -b master git@github.com:MDavidHernandezP/WSMercadoLibre.git
     cd "the proyect directory"
     ```
 
@@ -59,8 +59,8 @@ The Flask application that serves as the API endpoint. It includes routes for sc
 
 ## Usage
 
-After successful installation, the Flask application will be accessible, use [postman](https://www.postman.com/downloads/), once you are there tou will see a search bar where you will put the direction `http://localhost:6000` , then "/" and the name of the endpoint below, 
-make sure the method is , once it connects you  will sea a menu below, where you will see the button "body", press it and below that press the button "raw" and put the json with link and finally press the send.
+After successful installation, the Flask application will be accessible, use [postman](https://www.postman.com/downloads/), once you are there you will see a search bar where you will put the direction `http://localhost:6000` , then "/" and the name of the endpoint below, 
+make sure the method is correct, once it connects you will see a menu below, where you could see the button "body", press it, and below that press the button "raw", and put the json with link and finally just press it again to send it.
 
 ## API Endpoint
 
