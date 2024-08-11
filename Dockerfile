@@ -1,20 +1,15 @@
-# Utiliza una imagen base de Python oficial
-FROM python:3.9-slim
+# Use an official Python 3.10 image as the base image.
+FROM python:3.10-slim
 
-# Establece el directorio de trabajo dentro del contenedor
+# Set the working directory to /app.
 WORKDIR /app
 
-# Copia los archivos requerimientos.txt en el contenedor
-COPY requirements.txt .
+# Copy the requirements.txt file and install dependencies.
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Instala las dependencias de Python
-RUN pip install -r requirements.txt
-
-# Copia el resto del código de la aplicación Flask en el contenedor
+# Copy the rest of the application code to the container.
 COPY . .
 
-# Expone el puerto en el que se ejecutará la aplicación
-EXPOSE 6000
-
-# Comando para ejecutar la aplicación Flask
-CMD ["flask", "run", "--host=0.0.0.0", "--port=6000"]
+# Define the command to run your FastAPI app with Uvicorn.
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,10 +1,34 @@
-version: '3.8'
+version: '3.8'  # Specifies the version of Docker Compose syntax to use.
+
 services:
-  flask-app:
-    build: .
+  web:
+    image: fastapi-scraper  # The image to use for the FastAPI service. It assumes an image named 'fastapi-scraper' is available.
+    build:
+      context: .  # The build context is the current directory, meaning Docker will use the Dockerfile in this directory to build the image.
+      dockerfile: Dockerfile  # Specifies the Dockerfile to use for building the image.
     ports:
-      - "6000:6000"
+      - "8000:8000"  # Maps port 8000 of the host to port 8000 of the container. This exposes the FastAPI application on port 8000.
     volumes:
-      - .:/app
+      - .:/app  # Mounts the current directory (on the host) to /app in the container. This allows for live code updates and persistence.
     environment:
-      - FLASK_APP=app.py
+      - ENV=development  # Sets an environment variable ENV inside the container to 'development'. This can be used to differentiate between development and production environments.
+    depends_on:
+      - mongodb  # Specifies that the web service depends on the mongodb service. Docker Compose will start the mongodb service before the web service.
+    networks:
+      - app-network  # Connects the web service to the 'app-network' network.
+
+  mongodb:
+    image: mongo:latest  # Uses the latest MongoDB image from Docker Hub.
+    ports:
+      - "27018:27017"  # Maps port 27017 of the host to port 27017 of the container. This exposes MongoDB on port 27017.
+    volumes:
+      - mongodb-data:/data/db  # Mounts the volume 'mongodb-data' to /data/db in the container. This is where MongoDB stores its data.
+    networks:
+      - app-network  # Connects the mongodb service to the 'app-network' network.
+
+networks:
+  app-network:
+    driver: bridge  # Defines a custom network named 'app-network' using the 'bridge' driver. This allows communication between services.
+
+volumes:
+  mongodb-data:  # Defines a named volume 'mongodb-data'. Docker manages this volume and persists MongoDB data across container restarts.
