@@ -97,6 +97,7 @@ Using both [Postman](https://www.postman.com/downloads/) or [Thunder Client](htt
 
 As we say it must be a option bar, but also below this one it must be another one with other differente options, in this case you must select the one that says `json` then in the blank space you must write the name of the product desired with the format below.
 
+
     ```json
     {
         "url": "https://www.mercadolibre.com.mx/tu-producto"
