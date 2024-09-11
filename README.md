@@ -17,7 +17,7 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Content Overview](#content-overview)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Specifics API Endpoints '/scrape' & '/manual/{product}'](#specifics-api-endpoints-scrape-and-manual-product)
+- [Specifics API Endpoints /scrape and /manual/{product}](#specifics-api-endpoints-scrape-and-manual-product)
 - [Expectations for future (PowerBI and Tableau Analysis)](#expectations-for-future-powerbi-and-tableau-analysis)
 - [Contributions](#contributions)
 - [Credits](#credits)
@@ -75,9 +75,9 @@ After succesfully have cloned the repository, and have built and run the docker 
 
 - First, using a web browser to acces the localhost with the respective port, copy and paste this url in your web browser's search bar `http://localhost:8000`.
 
-- Second, using an API visualization or management tool, such as [Postman](https://www.postman.com/downloads/), or you can also use an extension for Visual Studio Code called `Thunder Client`, both works basically the same. In both tools, you will see a search bar with a HTTP Method beside, in the search bar copy and paste the localhost with the correct port like `http://localhost:8000`, then make sure that the HTTP Method is set in `GET`.
+- Second, using an API visualization or management tool, such as [Postman](https://www.postman.com/downloads/), or you can also use an extension for Visual Studio Code called [Thunder Client](https://www.thunderclient.com/), both works basically the same. In both tools, you will see a search bar with a HTTP Method beside, in the search bar copy and paste the localhost with the correct port like `http://localhost:8000`, then make sure that the HTTP Method is set in `GET`.
 
-## Specifics API Endpoints '/scrape' & '/manual/{product}'
+## Specifics API Endpoints /scrape and /manual/{product}
 
 Within the routes of the API there are two that can accomplish the task of scraping, '/manual/{product}' and '/scrape', the first works by just writing the desired product in the URL, but the second one works by passing it the product in a json by using a more specific request method of the API; so maybe it could not be clear how to use it, and here I'm showing how exactly must be used.
 
@@ -87,7 +87,7 @@ Within the routes of the API there are two that can accomplish the task of scrap
 In the section for HTTP Methods beside the search bar, make sure that this method is selected because this specific route won't work if not.
 
 - **Mean of the request:** Body
-Using both [Postman](https://www.postman.com/downloads/) or `Thunder Client`, or even another tool to make request to an API, below the search bar from these ones, it must be some options with different kinds of options, you must select the one that says `Body`.
+Using both [Postman](https://www.postman.com/downloads/) or [Thunder Client](https://www.thunderclient.com/), or even another tool to make request to an API, below the search bar from these ones, it must be some options with different kinds of options, you must select the one that says `Body`.
 
 - **Request Format:** JSON
 As we say it must be a option bar, but also below this one it must be another one with other differente options, in this case you must select the one that says `json` then in the blank space you must write the name of the product desired with the format below.
