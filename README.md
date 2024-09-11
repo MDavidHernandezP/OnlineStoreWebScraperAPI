@@ -57,8 +57,8 @@ Defines the Docker services, specifying the build context, the drivers for the c
     git clone -b master git@github.com:MDavidHernandezP/OnlineStoreWebScraperAPI.git
     cd "the proyect directory"
     ```
-
-OR:
+    
+    OR:
 
     ```bash
     git clone https://github.com/MDavidHernandezP/OnlineStoreWebScraperAPI.git
