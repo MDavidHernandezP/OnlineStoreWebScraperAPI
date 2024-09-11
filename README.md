@@ -81,7 +81,7 @@ After succesfully have cloned the repository, and have built and run the docker 
 
 ## Specifics API Endpoints scrape and manual
 
-Within the routes of the API there are two that can accomplish the task of scraping, '/manual/{product}' and '/scrape', the first works by just writing the desired product in the URL, but the second one works by passing it the product in a json by using a more specific request method of the API; so maybe it could not be clear how to use it, and here I'm showing how exactly must be used.
+Within the routes of the API there are two that can accomplish the task of scraping, `/manual/{product}` and `/scrape`, the first works by just writing the desired product in the URL, but the second one works by passing it the product in a json by using a more specific request method of the API; so maybe it could not be clear how to use it, and here I'm showing how exactly must be used.
 
 - **Endpoint:** `/scrape`
 
