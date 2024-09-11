@@ -112,15 +112,16 @@ Image of how it looks in Thunder Client.
 ![Thunder Image](images/thunder-client.png)
 
 - **Response Format:**
+
 Then it should return something similar like this:
 
-    ```json
-    {
-        "message": "Scrape data by passing a json to the body of the post request.",
-        "Your product selected was": "product_json",
-        "message": "You could seen the data scraped of your product in the route (/data)."
-    }
-    ```
+```json
+{
+    "message": "Scrape data by passing a json to the body of the post request.",
+    "Your product selected was": "product_json",
+    "message": "You could seen the data scraped of your product in the route (/data)."
+}
+```
 
 You could check the results of the scraper in the respective routes.
 
