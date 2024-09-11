@@ -99,7 +99,7 @@ As we say it must be a option bar, but also below this one it must be another on
 
 ```json
 {
-    "url": "https://www.mercadolibre.com.mx/tu-producto"
+    "product": "Tablet"
 }
 ```
 
