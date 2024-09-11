@@ -17,7 +17,7 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Content Overview](#content-overview)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Specifics API Endpoints /scrape and /manual/{product}](#specifics-api-endpoints-scrape-and-manual-product)
+- [Specifics API Endpoints scrape and manual](#specifics-api-endpoints-scrape-and-manual)
 - [Expectations for future (PowerBI and Tableau Analysis)](#expectations-for-future-powerbi-and-tableau-analysis)
 - [Contributions](#contributions)
 - [Credits](#credits)
@@ -55,11 +55,13 @@ Defines the Docker services, specifying the build context, the drivers for the c
 
     ```bash
     git clone -b master git@github.com:MDavidHernandezP/OnlineStoreWebScraperAPI.git
+    cd "the proyect directory"
+    ```
 
-    "or"
+OR:
 
+    ```bash
     git clone https://github.com/MDavidHernandezP/OnlineStoreWebScraperAPI.git
-
     cd "the proyect directory"
     ```
 
@@ -77,7 +79,7 @@ After succesfully have cloned the repository, and have built and run the docker 
 
 - Second, using an API visualization or management tool, such as [Postman](https://www.postman.com/downloads/), or you can also use an extension for Visual Studio Code called [Thunder Client](https://www.thunderclient.com/), both works basically the same. In both tools, you will see a search bar with a HTTP Method beside, in the search bar copy and paste the localhost with the correct port like `http://localhost:8000`, then make sure that the HTTP Method is set in `GET`.
 
-## Specifics API Endpoints /scrape and /manual/{product}
+## Specifics API Endpoints scrape and manual
 
 Within the routes of the API there are two that can accomplish the task of scraping, '/manual/{product}' and '/scrape', the first works by just writing the desired product in the URL, but the second one works by passing it the product in a json by using a more specific request method of the API; so maybe it could not be clear how to use it, and here I'm showing how exactly must be used.
 
@@ -172,3 +174,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
