@@ -85,18 +85,19 @@ Within the routes of the API there are two that can accomplish the task of scrap
 
 - **Endpoint:** `/scrape`
 
-- **Method:** POST
+- **Method:** `POST`
 
 In the section for HTTP Methods beside the search bar, make sure that this method is selected because this specific route won't work if not.
 
-- **Mean of the request:** Body
+- **Mean of the request:** `Body`
 
 Using both [Postman](https://www.postman.com/downloads/) or [Thunder Client](https://www.thunderclient.com/), or even another tool to make request to an API, below the search bar from these ones, it must be some options with different kinds of options, you must select the one that says `Body`.
 
-- **Request Format:** JSON
+- **Request Format:** `JSON`
 
 ```markdown
 As we say it must be a option bar, but also below this one it must be another one with other differente options, in this case you must select the one that says `json` then in the blank space you must write the name of the product desired with the format below.
+```
 
     ```json
     {
