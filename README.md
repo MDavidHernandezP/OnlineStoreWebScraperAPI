@@ -10,7 +10,7 @@
 
 # Dockerized Online Store Web Scraper API
 
-This project aims to create an Asynchronous Web Scraper of an Online Store (Mercado Libre), this scraper made just with Python, Beautiful Soup, Request HTML, asyncio, and accesible by using an API created with FastAPI and PyMongo. The data collected is saved into a NoSQL Database from MongoDB and all this project inside a Dockerized Enviroment.
+This project aims to create an Asynchronous Web Scraper of an Online Store (Mercado Libre), this scraper made just with Python, Beautiful Soup, Request HTML, asyncio, and accesible by using an API created with FastAPI and PyMongo. The data collected is saved into a NoSQL Database from MongoDB and all this project it's inside a Dockerized Enviroment.
 
 ## Index
 
@@ -27,15 +27,15 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 
 ### 1. `app.py`
 
-The Python code that serves as the API with `FastAPI` exposing the needed endpoints. It includes two routes for differents methods of scraping data and additional endpoints to looking at the raw results, and another one with some predefined featured insights from the raw data.
+The Python code that serves as the API with `FastAPI` exposing the needed endpoints. It includes two routes for differents methods of scraping data and additional endpoints for looking at the raw results, and another one with some predefined featured insights from the raw data.
 
 ### 2. `scraper.py`
 
-An asynchronous web scraper implemented in Python using `Asyncio`, `Requests_html` and `BeautifulSoup`. It works by passing it the name of the product desired, it makes a search into the Online Store's Web page and extracts the urls of all the products results, then it uses the collected urls and scrapes all the information of the products for each single url.
+An asynchronous web scraper implemented in Python using `Asyncio`, `Requests_html` and `BeautifulSoup`. It works by passing it the name of the product desired, it makes a search into the Online Store's Web page and extracts the urls of all the products results, then it uses the collected urls to scrape all the information of the products for each single url.
 
 ### 3. `db/ client.py`
 
-The Python code that serves the Instance of the MongoDB connection by using `PyMongo`. NOTE: Technically is more easy to implement the instance of the connection in the other scripts because they also have to call this script to use the connection, but anyway using this like scripts structure is a better practice.
+The Python code that serves the Instance of the MongoDB connection by using `PyMongo`. NOTE: Technically is easier to implement the instance of the connection in the other scripts because they also have to call this script to use the connection, but anyway using this like script structure is a better practice.
 
 ### 4. `requirements.txt`
 
@@ -91,7 +91,7 @@ In the section for HTTP Methods beside the search bar, make sure that this metho
 
 - **Mean of the request:** `Body`
 
-Using both [Postman](https://www.postman.com/downloads/) or [Thunder Client](https://www.thunderclient.com/), or even another tool to make request to an API, below the search bar from these ones, it must be some options with different kinds of options, you must select the one that says `Body`.
+Using both [Postman](https://www.postman.com/downloads/) or [Thunder Client](https://www.thunderclient.com/), or even another tool to make request to an API, below the search bar from these ones, it must be some different options, you must select the one that says `Body`.
 
 - **Request Format:** `JSON`
 
@@ -127,11 +127,11 @@ You could check the results of the scraper in the respective routes.
 
 ## Expectations for future (PowerBI and Tableau Analysis)
 
-The next step that we want to accomplish is using the Data Analyis to get some insights from the Data Collected, this by using Visualization tools such as PowerBI and Tableau; actually we have dived a little bit into using PowerBI connecting MongoDB directly to PowerBI, this to use directly the data in PowerBI to make visualizations and finally create a big Dashboard or even create a Report of the Data using the PowerBI Report Builder, but as I said we have dived just a little bit into this, and aparte this wasn't planned originally for the project, we are just doing this to learn and gain good experience with these tools.
+The next step that we want to accomplish is using the Data Analyis to get some insights from the Data Collected, this by using Visualization tools such as PowerBI and Tableau; actually we have dived a little bit into using PowerBI connecting MongoDB directly to PowerBI, this to use directly the data in PowerBI to make visualizations and finally create a big Dashboard or even create a Report of the Data using the PowerBI Report Builder, but as I said we have dived just a little bit into this, and also this wasn't planned originally for the project, we are just doing this to learn and gain good experience with these tools.
 
 ## Contributions
 
-Any contribution is accepted for this project we align with the MIT License for open source. If you are interested in contributing directly with us or just copy our code for an own project you're completly free to do it. You can contact by this email in case of doubts or contributions: `mdavidhernandezp@gmail.com`.
+Any contribution is accepted for this project we align with the MIT License for open source. If you are interested in contributing directly with us or just copy our code for an own project, you're completly free to do it. You can contact us by this email in case of doubts or contributions: `mdavidhernandezp@gmail.com`.
 
 - **Steps for contributing:**
 1. Fork the project.
