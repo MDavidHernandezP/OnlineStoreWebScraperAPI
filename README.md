@@ -8,7 +8,7 @@
 [![Thunder Client](https://img.shields.io/badge/Thunder%20Client-v1.10.0-orange.svg)](https://www.thunderclient.com/)
 [![Docker](https://img.shields.io/badge/Docker-v20.10.17-purple.svg)](https://www.docker.com/)
 
-# Dockerized Online Store Web Scraper API with MongoDB
+# Dockerized Online Store Web Scraper API
 
 This project aims to create an Asynchronous Web Scraper of an Online Store (Mercado Libre), this scraper made just with Python, Beautiful Soup, Request HTML, asyncio, and accesible by using an API created with FastAPI and PyMongo. The data collected is saved into a NoSQL Database from MongoDB and all this project it's inside a Dockerized Enviroment.
 
@@ -75,9 +75,9 @@ Defines the Docker services, specifying the build context, the drivers for the c
 
 After succesfully have cloned the repository, and have built and run the docker compose file, you can check if the API is working by different ways:
 
-- First, using a web browser to acces the localhost with the respective port, copy and paste this url in your web browser's search bar `http://localhost:8000`.
+- First, using a web browser to acces the localhost with the respective port, copy and paste this url in your web browser's search bar [http://localhost:8000](http://localhost:8000).
 
-- Second, using an API visualization or management tool, such as [Postman](https://www.postman.com/downloads/), or you can also use an extension for Visual Studio Code called [Thunder Client](https://www.thunderclient.com/), both works basically the same. In both tools, you will see a search bar with a HTTP Method beside, in the search bar copy and paste the localhost with the correct port like `http://localhost:8000`, then make sure that the HTTP Method is set to `GET`.
+- Second, using an API visualization or management tool, such as [Postman](https://www.postman.com/downloads/), or you can also use an extension for Visual Studio Code called [Thunder Client](https://www.thunderclient.com/), both works basically the same. In both tools, you will see a search bar with a HTTP Method beside, in the search bar copy and paste the localhost with the correct port like [http://localhost:8000](http://localhost:8000), then make sure that the HTTP Method is set to `GET`.
 
 ## Specifics API Endpoints scrape and manual
 
@@ -139,7 +139,6 @@ Any contribution is accepted for this project we align with the MIT License for 
 3. Commit your changes (`git commit -am 'adding new feature'`).
 4. Push the branch (`git push origin feature/new-feature`).
 5. Open a pull request.
-
 
 ## Credits
 
