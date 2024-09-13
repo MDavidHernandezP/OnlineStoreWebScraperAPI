@@ -8,7 +8,7 @@
 [![Thunder Client](https://img.shields.io/badge/Thunder%20Client-v1.10.0-orange.svg)](https://www.thunderclient.com/)
 [![Docker](https://img.shields.io/badge/Docker-v20.10.17-purple.svg)](https://www.docker.com/)
 
-# Dockerized Online Store Web Scraper API
+# Dockerized Online Store Web Scraper API with MongoDB
 
 This project aims to create an Asynchronous Web Scraper of an Online Store (Mercado Libre), this scraper made just with Python, Beautiful Soup, Request HTML, asyncio, and accesible by using an API created with FastAPI and PyMongo. The data collected is saved into a NoSQL Database from MongoDB and all this project it's inside a Dockerized Enviroment.
 
