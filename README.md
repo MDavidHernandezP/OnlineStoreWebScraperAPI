@@ -179,7 +179,7 @@ Here I show you an image of how it looked the data at the end.
 
 ![Table End](images/Table-End.png)
 
-Just to make your life easier I'm leaving my DAX commands here, and they should work well for any product you choose cause they should follow the same format of columns. NOTE: I could fix the formats and those things from the begining of the python scraper but I wanted to show my Data Cleaning skills, and my Technicall skills with PowerBI and DAX.
+Just to make your life easier I'm leaving my DAX commands here, and they should work well for any product you choose cause they should follow the same format of columns. NOTE: I could fix the formats and those things from the beginning of the python scraper but I wanted to show my Data Cleaning skills, and my Technicall skills with PowerBI and DAX.
 
 1. Navigation:
 
