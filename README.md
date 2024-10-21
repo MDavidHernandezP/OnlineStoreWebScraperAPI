@@ -7,6 +7,8 @@
 [![Postman](https://img.shields.io/badge/Postman-v10.8.1-orange.svg)](https://www.postman.com/)
 [![Thunder Client](https://img.shields.io/badge/Thunder%20Client-v1.10.0-orange.svg)](https://www.thunderclient.com/)
 [![Docker](https://img.shields.io/badge/Docker-v20.10.17-purple.svg)](https://www.docker.com/)
+[![R](https://img.shields.io/badge/R-4.3.0-blue.svg)](https://www.r-project.org/)
+[![Power BI](https://img.shields.io/badge/Power%20BI-2.116.966.0-yellow.svg)](https://powerbi.microsoft.com/)
 
 # Dockerized Online Store Web Scraper API
 
@@ -18,7 +20,9 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Installation](#installation)
 - [Usage](#usage)
 - [Specifics API Endpoints scrape and manual](#specifics-api-endpoints-scrape-and-manual)
-- [Expectations for future (PowerBI and Tableau Analysis)](#expectations-for-future-powerbi-and-tableau-analysis)
+- [Connect MongoDB with PowerBI](#connect-mongodb-with-powerbi)
+- [Data Analysis, Cleaning and Visualization with PowerBI](data-analysis-cleaning-and-visualization-with-powerbi)
+- [Expectations for future (Tableau)](#expectations-for-future-tableau)
 - [Contributions](#contributions)
 - [Credits](#credits)
 - [License](#license)
@@ -48,6 +52,10 @@ Configures the Docker image for the API by setting up the working directory, cop
 ### 6. `docker-compose.yml`
 
 Defines the Docker services, specifying the build context, the drivers for the connection between services, port binding, the MongoDB Database, and volume mapping. Additionally, it sets the API environment variable.
+
+### 7. `powerbi/`
+
+This folder contains all the files, created or used for the Data Analysis part of this project, that envolves the Data cleaning and Visualization with PowerBI, the files inside the folder are: `Tablets MongoDB Visualization.pbit`, `Tablets MongoDB Visualization.pbix`, `Tablets MongoDB Visualization.pdf`, `Boxplot Python.py` and `Boxplot R.r`.
 
 ## Installation
 
@@ -123,11 +131,209 @@ Then it should return something similar like this:
 }
 ```
 
-You could check the results of the scraper in the respective routes.
+You could check the results of the scraper in the respective routes. If you have MongoDB Compass and run the project locally you can access the data directly into the MongoDB Compass Interface.
 
-## Expectations for future (PowerBI and Tableau Analysis)
+Image of how it should look the (data) collection.
 
-The next step that we want to accomplish is using the Data Analyis to get some insights from the Data Collected, this by using Visualization tools such as PowerBI and Tableau; actually we have dived a little bit into using PowerBI connecting MongoDB directly to PowerBI, this to use directly the data in PowerBI to make visualizations and finally create a big Dashboard or even create a Report of the Data using the PowerBI Report Builder, but as I said we have dived just a little bit into this, and also this wasn't planned originally for the project, we are just doing this to learn and gain good experience with these tools.
+![data Image](images/MongoDB-Compass-data.png)
+
+Image of how it should look the (urls) collection.
+
+![urls Image](images/MongoDB-Compass-urls.png)
+
+## Connect MongoDB with PowerBI
+
+Now with the data correctly exctracted and stored, I wanted to do something relevant with it, so I decided to use PowerBI to make some Data Analysis to the data I collected and look for some relevant insights. But, before starting to look all I did, I have to clarify that all the steps below were did in local and with Windows 11, not with the Containarized Enviroment of Docker, it could work or it cannot, I couldn't make a test for that, you could try.
+
+To can connect MongoDB Compass to PowerBI, we need to do some stuff, this because MongoDB is a NoSQL Database and PowerBI normally works with a tables format, but although this incovenient, we can make it work.
+
+I highly recommend to watch this Video Tutorial for installing and setting all correctly and then come back, link of the video [Video Tutorial](https://www.youtube.com/watch?v=2_uFlLYjKhk).
+
+- **Install MongoDB BI Connector**
+
+The MongoDB BI Connector ODBC Driver enables users to create a Data Source Name (DSN) and connect a variety of BI tools to the BI Connector. Here is the link to the Official Download Web page of MongoDB, [MongoDB BI Connector](https://www.mongodb.com/docs/bi-connector/current/reference/odbc-driver/).
+
+- **ODBC Configuration**
+
+Now that you have successfully installed the MongoDB BI Connector, you need to configure the ODBC Data Sources of your System, you could do this by searching the ODBC Data Sources Application of your system (64 or 32 bits depending on your system), and there set the new data source of MongoDB.
+
+- **Get the data in PowerBI**
+
+Finally, once you have all set, go directly to PowerBI, create a new report, in the home menu press the button (Get Data) and then in (More...), another menu is displayed, in the search bar write ODBC and select the option that exacty says (ODBC) and then click the button (connect), a new menu will be shown and there you could the name that you have set for the MongoDB Data Source, the Navigator menu will be shown and you could see and select the collections of your Databases, then PowerBI will automatically convert your collections into tables and you will have them as your data in PowerBI.
+
+## Data Analysis, Cleaning and Visualization with PowerBI
+
+Right now, we already have our data in PowerBI and we can play with it, but our data collected has some problems of format and wrong values, so before we move on, we need to fix that by realizing a good Data Cleansing, to then do a good Data Anlysis of our data to know what we want to obtain from the data we have, and finally create our Visualizations and a good Dashboard.
+
+- **Data Cleaning**
+
+Alright, we have our data in PowerBI, but this data has many problems, such as the format, the data type, wrong characters, and so on. This are each of the problems: all the columns have its values as strings even if they are only numbers, some columns have null values, some columns that should be numeric have extra strings or characters that complicate the process of converting these into numeric ones, and others have the numeric type well but not in a standard way.
+
+For addressing these problems PowerBI has something called (DAX) that is like a Language created to make easier the Data Cleaning of datasets or tables, we can access to this by clicking the button (Transform Data) in the Home menu, then a new window will appear and there you could see an editor for your table.
+
+Here I show you an image of how it looked the data at the beginning.
+
+![Table Start](images/table-start.png)
+
+Here I show you an image of how it looked the data at the end.
+
+![Table End](images/table-end.png)
+
+Just to make your life easier I'm leaving my DAX commands here, and they should work well for any product you choose cause they should follow the same format of columns. NOTE: I could fix the formats and those things from the begining of the python scraper but I wanted to show my Data Cleaning skills, and my Technicall skills with PowerBI and DAX.
+
+1. Navigation:
+
+    ```DAX
+    = monguito_Database{[Name="data",Kind="Table"]}[Data]
+    ```
+
+2. Changed Type:
+
+    ```DAX
+    = Table.TransformColumnTypes(data_Table,{{"Rating", type number}, {"Price", Currency.Type}, {"Original Price", Currency.Type}})
+    ```
+
+3. Replaced Value:
+
+    ```DAX
+    = Table.ReplaceValue(#"Changed Type","% OFF","",Replacer.ReplaceText,{"Discount"})
+    ```
+
+4. Changed Type 1:
+
+    ```DAX
+    = Table.TransformColumnTypes(#"Replaced Value",{{"Discount", type number}})
+    ```
+
+5. Divided Column:
+
+    ```DAX
+    = Table.TransformColumns(#"Changed Type1", {{"Discount", each _ / 100, type number}})
+    ```
+
+6. Changed Type 2:
+
+    ```DAX
+    = Table.TransformColumnTypes(#"Divided Column",{{"Discount", Percentage.Type}})
+    ```
+
+7. Replaced Value 1:
+
+    ```DAX
+    = Table.ReplaceValue(#"Changed Type2","(","",Replacer.ReplaceText,{"Number of Ratings"})
+    ```
+
+8. Replaced Value 2:
+
+    ```DAX
+    = Table.ReplaceValue(#"Replaced Value1",")","",Replacer.ReplaceText,{"Number of Ratings"})
+    ```
+
+9. Changed Type 3:
+
+    ```DAX
+    = Table.TransformColumnTypes(#"Replaced Value2",{{"Number of Ratings", Int64.Type}})
+    ```
+
+10. Replaced Value 3:
+
+    ```DAX
+    = Table.ReplaceValue(#"Changed Type3","Nuevo","",Replacer.ReplaceText,{"Sold Quantity"})
+    ```
+
+11. Replaced Value 4:
+
+    ```DAX
+    = Table.ReplaceValue(#"Replaced Value3","|","",Replacer.ReplaceText,{"Sold Quantity"})
+    ```
+12. Replaced Value 5:
+
+    ```DAX
+    = Table.ReplaceValue(#"Replaced Value4","vendidos","",Replacer.ReplaceText,{"Sold Quantity"})
+    ```
+
+13. Replaced Value 6:
+
+    ```DAX
+    = Table.ReplaceValue(#"Replaced Value5","+","",Replacer.ReplaceText,{"Sold Quantity"})
+    ```
+
+14. Replaced Value 7:
+
+    ```DAX
+    = Table.ReplaceValue(#"Replaced Value6","mil","000",Replacer.ReplaceText,{"Sold Quantity"})
+    ```
+
+15. Replaced Value 8:
+
+    ```DAX
+    = Table.ReplaceValue(#"Replaced Value7","vendido","",Replacer.ReplaceText,{"Sold Quantity"})
+    ```
+
+16. Changed Type 4:
+
+    ```DAX
+    = Table.TransformColumnTypes(#"Replaced Value8",{{"Sold Quantity", Int64.Type}})
+    ```
+
+Now our data it's ready.
+
+- **Data Analysis**
+
+Before we can create any visualization we need to understand exactly what we have, what is useful, what is what we want to know, etc., so for to know that, we could look at our table and see what columns do we have, but most importantly, which one would be useful, in our data the columns are: Name, Discount, Rating, Number of Ratings, Price, Original Price and Sold Quantity; there are more that could be useful but in the test dataset that i'm using those have their entire columns empty so I'm avoiding them. Now that we have clarified our useful data, it's time to analyze it and think in what we could get from using it, when we finished and have set some insights that we want, then it's time to visualize our data to see if we can find what we are looking for.
+
+- **Data Visualization**
+
+For the Data Visualization I decide to first create many Visualizations of different types of graphs and charts in differents pages of the report to at the end gather the better ones, or the one that I considered more important, in one single page that would work as my Dashboard.
+
+Here I'm leaving you all the kinds of graphs I made in different pages.
+
+![Histogram Image](images/Visualization-Histogram.png)
+
+![Top Image](images/Visualization-Top-5.png)
+
+![Line Image](images/Visualization-Line-Graph.png)
+
+![Scatter Image](images/Visualization-Scatter-Plot.png)
+
+![BoxPlot Image](images/Visualization-Box-Plot.png)
+
+PowerBI doesn't have Box Plots (or maybe I didn't find them), but anyway, I decide to use the PowerBI integrated options of (Python Visual) and (R script visual) to make two different kinds of Box Plots, I could have done it just with Python, but I recently learned the Language R and I wanted to challenge myself; here I'm leaving you the scripts to copy them, but I also add them to the repository in the `powerbi` folder.
+
+![Py Image](images/Python-Script.png)
+
+    ```Python
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    sns.boxplot(dataset['Price'], color='blueviolet')
+    plt.show()
+    ```
+
+![R Image](images/R-Script.png)
+
+    ```R
+    boxplot(Price ~ Rating, # meta_score with respect of platform.
+        data = dataset, # Specify data source.
+        col = "purple",
+        # To show only this 5 platforms.
+        subset = Rating %in% c(4.6, 4.7, 4.8, 4.9, 5),
+        xlab = "Top 5 Ratings",
+        ylab = "Prices",
+        fram = FALSE
+        )
+    ```
+
+![Pie Image](images/Visualization-Pie-&-Donnut.png)
+
+Here I'm leaving you my final Dashboard of PowerBI, the best of the best.
+
+![Dashboard Image](images/Visualization-Dashboard.png)
+
+As I probably mentioned in the content overview you could have the files of my report to acces to all these Visualizations.
+
+## Expectations for future (Tableau)
+
+Right now I have completed many of things I have proposed in the past Expectations for future, so the only things left are: Creating the Visualizations with Tableau, literally the same Graphs I just want to do it because in that way I can demonstrate my skills with that software; the other thing is completely dominate PowerBI Report Builder, this by successfully translating the report made in PowerBI but in the Paginated format of PowerBI Report Builder, to again demonstrate the hard skills with this software.
 
 ## Contributions
 
