@@ -21,7 +21,7 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Usage](#usage)
 - [Specifics API Endpoints scrape and manual](#specifics-api-endpoints-scrape-and-manual)
 - [Connect MongoDB with PowerBI](#connect-mongodb-with-powerbi)
-- [Data Analysis, Cleaning and Visualization with PowerBI](data-analysis,-cleaning-and-visualization-with-powerbi)
+- [Data Analysis: Cleaning and Visualization with PowerBI](data-analysis:-cleaning-and-visualization-with-powerbi)
 - [Expectations for future (Tableau)](#expectations-for-future-tableau)
 - [Contributions](#contributions)
 - [Credits](#credits)
@@ -161,7 +161,7 @@ Now that you have successfully installed the MongoDB BI Connector, you need to c
 
 Finally, once you have all set, go directly to PowerBI, create a new report, in the home menu press the button (Get Data) and then in (More...), another menu is displayed, in the search bar write ODBC and select the option that exacty says (ODBC) and then click the button (connect), a new menu will be shown and there you could the name that you have set for the MongoDB Data Source, the Navigator menu will be shown and you could see and select the collections of your Databases, then PowerBI will automatically convert your collections into tables and you will have them as your data in PowerBI.
 
-## Data Analysis, Cleaning and Visualization with PowerBI
+## Data Analysis: Cleaning and Visualization with PowerBI
 
 Right now, we already have our data in PowerBI and we can play with it, but our data collected has some problems of format and wrong values, so before we move on, we need to fix that by realizing a good Data Cleansing, to then do a good Data Anlysis of our data to know what we want to obtain from the data we have, and finally create our Visualizations and a good Dashboard.
 
