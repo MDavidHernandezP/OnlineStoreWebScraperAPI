@@ -21,7 +21,7 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Usage](#usage)
 - [Specifics API Endpoints scrape and manual](#specifics-api-endpoints-scrape-and-manual)
 - [Connect MongoDB with PowerBI](#connect-mongodb-with-powerbi)
-- [Data Analysis (Cleaning and Visualization with PowerBI)](data-analysis-cleaning-and-visualization-with-powerbi)
+- [Data Analysis (Cleaning and Visualization with PowerBI)](#data-analysis-cleaning-and-visualization-with-powerbi)
 - [Expectations for future (Tableau)](#expectations-for-future-tableau)
 - [Contributions](#contributions)
 - [Credits](#credits)
