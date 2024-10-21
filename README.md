@@ -21,7 +21,7 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Usage](#usage)
 - [Specifics API Endpoints scrape and manual](#specifics-api-endpoints-scrape-and-manual)
 - [Connect MongoDB with PowerBI](#connect-mongodb-with-powerbi)
-- [Data Analysis, Cleaning and Visualization with PowerBI](data-analysis-cleaning-and-visualization-with-powerbi)
+- [Data Analysis, Cleaning and Visualization with PowerBI](data-analysis,-cleaning-and-visualization-with-powerbi)
 - [Expectations for future (Tableau)](#expectations-for-future-tableau)
 - [Contributions](#contributions)
 - [Credits](#credits)
@@ -173,11 +173,11 @@ For addressing these problems PowerBI has something called (DAX) that is like a 
 
 Here I show you an image of how it looked the data at the beginning.
 
-![Table Start](images/table-start.png)
+![Table Start](images/Table-Start.png)
 
 Here I show you an image of how it looked the data at the end.
 
-![Table End](images/table-end.png)
+![Table End](images/Table-End.png)
 
 Just to make your life easier I'm leaving my DAX commands here, and they should work well for any product you choose cause they should follow the same format of columns. NOTE: I could fix the formats and those things from the begining of the python scraper but I wanted to show my Data Cleaning skills, and my Technicall skills with PowerBI and DAX.
 
