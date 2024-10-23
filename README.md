@@ -9,7 +9,7 @@
 [![Docker](https://img.shields.io/badge/Docker-v20.10.17-purple.svg)](https://www.docker.com/)
 [![R](https://img.shields.io/badge/R-4.3.0-blue.svg)](https://www.r-project.org/)
 [![Power BI](https://img.shields.io/badge/Power%20BI-2.116.966.0-yellow.svg)](https://powerbi.microsoft.com/)
-[![Power BI Report Builder](https://img.shields.io/badge/Power%20BI%20Report%20Builder-v15.6.1475.2317-yellow.svg)](https://powerbi.microsoft.com/report-builder/)
+[![Power BI Report Builder](https://img.shields.io/badge/Power%20BI%20Report%20Builder-v15.6.1475.2317-yellow.svg)](https://learn.microsoft.com/en-us/power-bi/paginated-reports/report-builder-power-bi/)
 
 # Dockerized Online Store Web Scraper API
 
