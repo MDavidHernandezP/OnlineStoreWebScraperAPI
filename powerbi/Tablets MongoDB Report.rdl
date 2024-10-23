@@ -1,0 +1,2778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>f0097dcb-4886-4369-8b84-be7a2a5a7161</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1813.16</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1813.16</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2024-10-23T15:30:42.2039337Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>ODBC</DataProvider>
+        <ConnectString>Dsn=MongoPowerBI</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>2aa3bf01-2583-442e-8d2e-2c9247ed6e21</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="MyWorkspace_TabletsMongoDBVisualization">
+      <rd:SecurityType>None</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>PBIDATASET</DataProvider>
+        <ConnectString>Data Source=pbiazure://api.powerbi.com/;Identity Provider="https://login.microsoftonline.com/organizations, https://analysis.windows.net/powerbi/api, f0b72488-7082-488a-a7e8-eada97bd842d";Initial Catalog=sobe_wowvirtualserver-ab87c034-bb1f-4211-9920-2346819a7460;Integrated Security=ClaimsToken</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>7e71e64d-55d8-4531-b8a0-1a4463be7ce1</rd:DataSourceID>
+      <rd:PowerBIWorkspaceName>My Workspace</rd:PowerBIWorkspaceName>
+      <rd:PowerBIDatasetName>Tablets MongoDB Visualization</rd:PowerBIDatasetName>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>MyWorkspace_TabletsMongoDBVisualization</DataSourceName>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>DAX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>_id</HierarchyName>
+                      <HierarchyUniqueName>[data].[_id]</HierarchyUniqueName>
+                      <LevelName>_id</LevelName>
+                      <UniqueName>[data].[_id].[_id]</UniqueName>
+                    </ID>
+                    <ItemCaption>_id</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Available Units</HierarchyName>
+                      <HierarchyUniqueName>[data].[Available Units]</HierarchyUniqueName>
+                      <LevelName>Available Units</LevelName>
+                      <UniqueName>[data].[Available Units].[Available Units]</UniqueName>
+                    </ID>
+                    <ItemCaption>Available Units</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Category</HierarchyName>
+                      <HierarchyUniqueName>[data].[Category]</HierarchyUniqueName>
+                      <LevelName>Category</LevelName>
+                      <UniqueName>[data].[Category].[Category]</UniqueName>
+                    </ID>
+                    <ItemCaption>Category</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Discount</HierarchyName>
+                      <HierarchyUniqueName>[data].[Discount]</HierarchyUniqueName>
+                      <LevelName>Discount</LevelName>
+                      <UniqueName>[data].[Discount].[Discount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Discount</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Name</HierarchyName>
+                      <HierarchyUniqueName>[data].[Name]</HierarchyUniqueName>
+                      <LevelName>Name</LevelName>
+                      <UniqueName>[data].[Name].[Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Number of Ratings</HierarchyName>
+                      <HierarchyUniqueName>[data].[Number of Ratings]</HierarchyUniqueName>
+                      <LevelName>Number of Ratings</LevelName>
+                      <UniqueName>[data].[Number of Ratings].[Number of Ratings]</UniqueName>
+                    </ID>
+                    <ItemCaption>Number of Ratings</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Original Price</HierarchyName>
+                      <HierarchyUniqueName>[data].[Original Price]</HierarchyUniqueName>
+                      <LevelName>Original Price</LevelName>
+                      <UniqueName>[data].[Original Price].[Original Price]</UniqueName>
+                    </ID>
+                    <ItemCaption>Original Price</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Price</HierarchyName>
+                      <HierarchyUniqueName>[data].[Price]</HierarchyUniqueName>
+                      <LevelName>Price</LevelName>
+                      <UniqueName>[data].[Price].[Price]</UniqueName>
+                    </ID>
+                    <ItemCaption>Price</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Product Code</HierarchyName>
+                      <HierarchyUniqueName>[data].[Product Code]</HierarchyUniqueName>
+                      <LevelName>Product Code</LevelName>
+                      <UniqueName>[data].[Product Code].[Product Code]</UniqueName>
+                    </ID>
+                    <ItemCaption>Product Code</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Product Number</HierarchyName>
+                      <HierarchyUniqueName>[data].[Product Number]</HierarchyUniqueName>
+                      <LevelName>Product Number</LevelName>
+                      <UniqueName>[data].[Product Number].[Product Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Product Number</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Rating</HierarchyName>
+                      <HierarchyUniqueName>[data].[Rating]</HierarchyUniqueName>
+                      <LevelName>Rating</LevelName>
+                      <UniqueName>[data].[Rating].[Rating]</UniqueName>
+                    </ID>
+                    <ItemCaption>Rating</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>data</DimensionName>
+                      <HierarchyName>Sold Quantity</HierarchyName>
+                      <HierarchyUniqueName>[data].[Sold Quantity]</HierarchyUniqueName>
+                      <LevelName>Sold Quantity</LevelName>
+                      <UniqueName>[data].[Sold Quantity].[Sold Quantity]</UniqueName>
+                    </ID>
+                    <ItemCaption>Sold Quantity</ItemCaption>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>Model</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>EVALUATE
+    'data'</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <CommandText>EVALUATE
+    'data'</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID_id">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[_id]</DataField>
+        </Field>
+        <Field Name="Available_Units">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Available Units]</DataField>
+        </Field>
+        <Field Name="Category">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Category]</DataField>
+        </Field>
+        <Field Name="Discount">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Discount]</DataField>
+        </Field>
+        <Field Name="Name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Name]</DataField>
+        </Field>
+        <Field Name="Number_of_Ratings">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Number of Ratings]</DataField>
+        </Field>
+        <Field Name="Original_Price">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Original Price]</DataField>
+        </Field>
+        <Field Name="Price">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Price]</DataField>
+        </Field>
+        <Field Name="Product_Code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Product Code]</DataField>
+        </Field>
+        <Field Name="Product_Number">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Product Number]</DataField>
+        </Field>
+        <Field Name="Rating">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Rating]</DataField>
+        </Field>
+        <Field Name="Sold_Quantity">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>data[Sold Quantity]</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Chart Name="Chart13">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label />
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart13_SeriesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Rating.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Rating.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Rating.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Rating">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Rating.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
+                      </ChartDataLabel>
+                      <ToolTip>#VALY</ToolTip>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Doughnut</Subtype>
+                  <Style>
+                    <ShadowOffset>0pt</ShadowOffset>
+                  </Style>
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>White</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <Border>
+                    <Color>#5c5c5c</Color>
+                  </Border>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Sum of Ratings</Caption>
+                <Style>
+                  <BackgroundColor>Black</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>Gold</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Chocolate</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>7.60737in</Top>
+            <Left>2.62252in</Left>
+            <Height>2.47587in</Height>
+            <Width>2.87748in</Width>
+            <Style>
+              <Border>
+                <Color>#5c5c5c</Color>
+                <Style>None</Style>
+                <Width>2pt</Width>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart12">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart12_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Price.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Price.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Price.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart12_SeriesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Name.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Name.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Name.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Original_Price">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Avg(Fields!Original_Price.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
+                      </ChartDataLabel>
+                      <ToolTip>#VALY</ToolTip>
+                      <Style />
+                      <ChartMarker>
+                        <Type>Circle</Type>
+                        <Size>10pt</Size>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Scatter</Type>
+                  <Style>
+                    <ShadowOffset>0pt</ShadowOffset>
+                  </Style>
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>True</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Scalar>true</Scalar>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Scalar>true</Scalar>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>True</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <Border>
+                    <Color>#5c5c5c</Color>
+                  </Border>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Position>TopLeft</Position>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Average of Price and Average of Original Price by Name and Name</Caption>
+                <Style>
+                  <BackgroundColor>Black</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>Gold</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Chocolate</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>10.15268in</Top>
+            <Left>0.45585in</Left>
+            <Height>4.08567in</Height>
+            <Width>5in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Color>#5c5c5c</Color>
+                <Style>None</Style>
+                <Width>2pt</Width>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart9">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label />
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart9_SeriesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Name.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Name.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Name.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Price">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Price.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
+                      </ChartDataLabel>
+                      <ToolTip>#VALY</ToolTip>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Bar</Type>
+                  <Style>
+                    <ShadowOffset>0pt</ShadowOffset>
+                  </Style>
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <Border>
+                    <Color>#5c5c5c</Color>
+                  </Border>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Position>TopLeft</Position>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Top 5 Most Expensive</Caption>
+                <Style>
+                  <BackgroundColor>Black</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>Gold</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Chocolate</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!Price.Value</FilterExpression>
+                <Operator>TopN</Operator>
+                <FilterValues>
+                  <FilterValue>5</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>3.76792in</Top>
+            <Left>0.45585in</Left>
+            <Height>3.77in</Height>
+            <Width>5.04415in</Width>
+            <ZIndex>2</ZIndex>
+            <ToolTip>=First(Fields!Name.Value, "DataSet2")</ToolTip>
+            <Style>
+              <Border>
+                <Color>#5c5c5c</Color>
+                <Style>None</Style>
+                <Width>2pt</Width>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart8">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart8_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Rating.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Rating.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Rating.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Price</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Price">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Avg(Fields!Price.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style>
+                          <FontSize>9pt</FontSize>
+                        </Style>
+                      </ChartDataLabel>
+                      <ToolTip>#VALY</ToolTip>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style>
+                    <ShadowOffset>0pt</ShadowOffset>
+                  </Style>
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <Border>
+                    <Color>#5c5c5c</Color>
+                  </Border>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Position>TopLeft</Position>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Which Average Price has the best Rating</Caption>
+                <Style>
+                  <BackgroundColor>Black</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>Gold</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Pacific</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>0.76736in</Top>
+            <Left>3.40278in</Left>
+            <Height>2.93111in</Height>
+            <Width>2.09722in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Color>#5c5c5c</Color>
+                <Style>None</Style>
+                <Width>2pt</Width>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart1">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart1_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Sold_Quantity.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Sold_Quantity.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Sold_Quantity.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Sold Quantity</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Sold_Quantity">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Sold_Quantity.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>#5c5c5c</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>White</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <Border>
+                    <Color>#5c5c5c</Color>
+                  </Border>
+                  <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Sum of Sold Quantity by Sold Quantity</Caption>
+                <Style>
+                  <BackgroundColor>Black</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>Gold</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Chocolate</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>0.76736in</Top>
+            <Left>0.45585in</Left>
+            <Height>2.93111in</Height>
+            <Width>2.87748in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Color>#5c5c5c</Color>
+                <Style>None</Style>
+                <Width>2pt</Width>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart3">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart3_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Sold_Quantity.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Sold_Quantity.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Sold_Quantity.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Price</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Price">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <X>=Fields!Sold_Quantity.Value</X>
+                        <Y>=Avg(Fields!Price.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Line</Type>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Position>TopLeft</Position>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Average of Price by Sold Quantity</Caption>
+                <Style>
+                  <BackgroundColor>Black</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextAlign>Left</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                  <Color>Gold</Color>
+                </Style>
+                <Position>TopLeft</Position>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>Chocolate</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>7.60737in</Top>
+            <Left>0.45585in</Left>
+            <Height>2.47587in</Height>
+            <Width>2.09722in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Textbox Name="Textbox12">
+            <rd:DefaultName>Textbox12</rd:DefaultName>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Description: This report was created just for a little demonstration that I have the skills and capabilities like the Data Analysis and Data Visualization to use not only PowerBI but also the PowerBI Report Builder Tool, this to design, create and share data converted into information, knowledge, and valuable insights for any organization or company.</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <Color>DimGray</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.22014in</Top>
+            <Left>0.45585in</Left>
+            <Height>0.47778in</Height>
+            <Width>5.04415in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>14.30779in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>6in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.02208in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ReportTitle">
+              <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+              <rd:DefaultName>ReportTitle</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Report of Scraped Products</Value>
+                      <Style>
+                        <FontFamily>Segoe UI Light</FontFamily>
+                        <FontSize>28pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <Color>#ffd400</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Left>0.14444in</Left>
+              <Height>0.61111in</Height>
+              <Width>4.83333in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox11">
+              <rd:DefaultName>Textbox11</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Made by: Mario David Hernandez Pantoja</Value>
+                      <Style>
+                        <Color>#ffd400</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.625in</Top>
+              <Left>0.14444in</Left>
+              <Height>0.39708in</Height>
+              <Width>4.83333in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image2">
+              <Source>Embedded</Source>
+              <Value>image1</Value>
+              <Sizing>FitProportional</Sizing>
+              <Left>4.97778in</Left>
+              <Height>1.02208in</Height>
+              <Width>1.02222in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>Black</BackgroundColor>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Run at: </Value>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0in</Top>
+              <Left>4in</Left>
+              <Height>0.45in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Black</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="ExecutionTime2">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Page Number: </Value>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Total Pages:  </Value>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Globals!TotalPages</Value>
+                      <Style>
+                        <Color>Gold</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0in</Top>
+              <Height>0.45in</Height>
+              <Width>2in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Black</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="image1">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+</Report>

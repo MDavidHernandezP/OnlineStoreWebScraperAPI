@@ -22,7 +22,7 @@ This project aims to create an Asynchronous Web Scraper of an Online Store (Merc
 - [Specifics API Endpoints scrape and manual](#specifics-api-endpoints-scrape-and-manual)
 - [Connect MongoDB with PowerBI](#connect-mongodb-with-powerbi)
 - [Data Analysis (Cleaning and Visualization with PowerBI)](#data-analysis-cleaning-and-visualization-with-powerbi)
-- [Expectations for future (Tableau)](#expectations-for-future-tableau)
+- [Reporting with PowerBI Report Builder](#reporting-with-powerbi-report-builder)
 - [Contributions](#contributions)
 - [Credits](#credits)
 - [License](#license)
@@ -331,9 +331,29 @@ Here I'm leaving you my final Dashboard of PowerBI, the best of the best.
 
 As I probably mentioned in the content overview you could have the files of my report to acces to all these Visualizations.
 
-## Expectations for future (Tableau)
+## Reporting with PowerBI Report Builder
 
-Right now I have completed many of things I have proposed in the past Expectations for future, so the only things left are: Creating the Visualizations with Tableau, literally the same Graphs I just want to do it because in that way I can demonstrate my skills with that software; the other thing is completely dominate PowerBI Report Builder, this by successfully translating the report made in PowerBI but in the Paginated format of PowerBI Report Builder, to again demonstrate the hard skills with this software.
+Just to close up this project, I wanted to use another tool that I've seen is a little bit popular for Data Visualization but more for Reporting, and that is the PowerBI Report Builder, this tool basically lets you do almost everything you can do in PowerBI but with some extra features and also in a Paginated Format. So now, basically, I'm gonna use it to create a Report based on my Visualizations and data that I used in PowerBI.
+
+First, I created a blank report, and works almost the same as in PowerBI, then you can use exactly the same process of using ODBC to connect the data from MongoDB to PowerBI Report Builder, but in this case as I uploaded my previous report of PowerBI into my workspace, I decided to get my dataset from there, but both ways work.
+
+Now with the data correctly charged I started with the process of formatting, creating the Visualization, wasting 3 hours looking how to do something beacuse the app is similar to PowerBI but not the same, so yeah... There are some things that are kinda more difficult to do in PowerBI Report Builder.
+
+Pictures of how it looked at the end but without running.
+
+![RB1 Image](images/RB1.png)
+
+![RB2 Image](images/RB2.png)
+
+And the final result already exported in PDF.
+
+![RB3 Image](images/RB3.png)
+![RB4 Image](images/RB4.png)
+![RB5 Image](images/RB5.png)
+
+Yeah I know, it's not that beauty, but I tried, the app is also kinda rustic.
+
+So, with this we reach the end of the entire project, with this project I just wanted to demonstarte my skills in Web Scraping, APIs and Database Management, Data Mining, Data Analysis, Data Cleaning, Data Visualization & Reporting/Documentation, and also my Technical skills in Languajes such as Python, R, and even SQL in some parts of the loading of data in PowerBI, also the NoSQL Database MongoDB, Docker, PowerBI and PowerBI Report Builder. 
 
 ## Contributions
 
