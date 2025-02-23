@@ -8,6 +8,18 @@ from db.client import db_client
 
 app = FastAPI()
 
+def get_latest_collection_name(base_name: str):
+    """ Returns the latest version of the collection based on existing ones in MongoDB. """
+    existing_collections = db_client.monguito.list_collection_names()
+    versions = [col for col in existing_collections if col.startswith(base_name)]
+    
+    if not versions:
+        return None  # Collection doesn't exist.
+    
+    # Sort versions to get the latest one (e.g., urls_laptop_2, urls_laptop_3).
+    versions.sort(reverse=True, key=lambda x: int(x.split("_")[-1]) if x.split("_")[-1].isdigit() else 1)
+    return versions[0]  # Return the most recent collection.
+
 # Main route of the API for telling the user how to use it.
 @app.get("/")
 async def root():
@@ -93,6 +105,29 @@ async def data():
         "data": all_data
     }
 
+# Route to retrieve scraped data for a specific product
+@app.get("/data/{product}")
+async def data(product: str):
+    urls_collection = get_latest_collection_name(f"urls_{product}")
+    data_collection = get_latest_collection_name(f"data_{product}")
+
+    if not urls_collection or not data_collection:
+        return {"error": f"No data found for product: {product}"}
+
+    # Fetch URLs and data (limited to 40 for performance)
+    all_urls = list(db_client.monguito[urls_collection].find({}).limit(40))
+    all_data = list(db_client.monguito[data_collection].find({}).limit(40))
+
+    # Convert ObjectId to string for JSON serialization
+    for doc in all_urls + all_data:
+        doc["_id"] = str(doc["_id"])
+
+    return {
+        "message": f"Scraped data for product: {product} (limited to 40 entries).",
+        "urls": all_urls,
+        "data": all_data,
+    }
+
 # Route for showing featured characteristics of the scraped data.
 @app.get("/featured")
 async def featured():
@@ -157,4 +192,74 @@ async def featured():
             "Biggest Discount Product": max_discount_product.get("Name") if max_discount_product else None,
             "Best Product": best_product.get("Name") if best_product else None,
         }
+    }
+
+# Route to show insights about a specific product's scraped data
+@app.get("/featured/{product}")
+async def featured(product: str):
+    data_collection = get_latest_collection_name(f"data_{product}")
+
+    if not data_collection:
+        return {"error": f"No data found for product: {product}"}
+
+    # Convert fields to numbers and handle missing data
+    def to_double(value, default=0.0):
+        try:
+            return float(value.replace(",", "").replace("% OFF", "").replace("Nuevo  |  +", ""))
+        except (ValueError, AttributeError):
+            return default
+
+    # Fetch documents
+    documents = list(db_client.monguito[data_collection].find({}))
+
+    if not documents:
+        return {"error": f"No records found in {data_collection}."}
+
+    # Initialize variables
+    total_price = total_discount = 0
+    total_products = len(documents)
+    min_price_product = max_rating_product = max_sales_product = max_discount_product = best_product = None
+
+    for doc in documents:
+        price = to_double(doc.get("Price"))
+        discount = to_double(doc.get("Discount"))
+        sales = to_double(doc.get("Sold Quantity"))
+        rating = to_double(doc.get("Rating"))
+
+        # Accumulate totals
+        total_price += price
+        total_discount += discount
+
+        # Find min/max products
+        if not min_price_product or price < to_double(min_price_product.get("Price")):
+            min_price_product = doc
+
+        if not max_rating_product or rating > to_double(max_rating_product.get("Rating")):
+            max_rating_product = doc
+
+        if not max_sales_product or sales > to_double(max_sales_product.get("Sold Quantity")):
+            max_sales_product = doc
+
+        if not max_discount_product or discount > to_double(max_discount_product.get("Discount")):
+            max_discount_product = doc
+
+        # Find best product based on price, rating, and sales
+        if not best_product or (price < to_double(best_product.get("Price")) and rating > to_double(best_product.get("Rating")) and sales > to_double(best_product.get("Sold Quantity"))):
+            best_product = doc
+
+    # Calculate averages
+    avg_price = total_price / total_products if total_products else 0
+    avg_discount = total_discount / total_products if total_products else 0
+
+    return {
+        "message": f"Featured insights for product: {product}",
+        "insights": {
+            "Average Price": avg_price,
+            "Average Discount": avg_discount,
+            "Cheapest Product": min_price_product.get("Name") if min_price_product else None,
+            "Best Rated Product": max_rating_product.get("Name") if max_rating_product else None,
+            "Most Sold Product": max_sales_product.get("Name") if max_sales_product else None,
+            "Highest Discount Product": max_discount_product.get("Name") if max_discount_product else None,
+            "Best Overall Product": best_product.get("Name") if best_product else None,
+        },
     }

@@ -12,26 +12,38 @@ class Scraper:
         self.session = AsyncHTMLSession()
         # Store the product name in an instance variable.
         self.product = product.replace(' ', '-').replace('_', '-')
+        self.urls_collection_name, self.data_collection_name = self.get_unique_collection_names()
+
+
+
+    def get_unique_collection_names(self):
+        """ Generate unique collection names to avoid overwriting data. """
+        base_urls = f"urls_{self.product}"
+        base_data = f"data_{self.product}"
+
+        # Check if they already exist in the database and add numeric suffix.
+        existing_collections = db_client.monguito.list_collection_names()
+        count = 1
+        urls_name, data_name = base_urls, base_data
+
+        while urls_name in existing_collections or data_name in existing_collections:
+            count += 1
+            urls_name = f"{base_urls}_{count}"
+            data_name = f"{base_data}_{count}"
+
+        return urls_name, data_name
 
 
 
     async def get_urls(self):
         
-        # Checking if the collection urls already exists.
-        if 'urls' in db_client.monguito.list_collection_names():
-            
-            # And if exists, delete it.
-            db_client.monguito['urls'].drop()
-            
-            print(f"The collection (urls) has been deleted.")
-
         # Calling the product that user choosed from the init method.
         self.product = self.product
 
         """ First loop for looping into the pages of a single search. """
 
         # Loop through pages, starting from 1, incrementing by 48 up to 1921.
-        for page in range(1, 1921, 48):    # Change 1921 to 47 to testing, just to don't have to scrape a massive amount of data for a little test.
+        for page in range(1, 47, 48):    # Change 1921 to 47 to testing, just to don't have to scrape a massive amount of data for a little test.
             # Construct the URL for each page using the product name and page number.
             main_url = f'https://listado.mercadolibre.com.mx/{self.product}_Desde_{page}_NoIndex_True'
             
@@ -43,7 +55,7 @@ class Scraper:
                 soup = BeautifulSoup(response.html.html, 'html.parser')
                 
                 # Find all anchor elements with the specified class.
-                elements_a = soup.find_all('a', class_="ui-search-item__group__element ui-search-link__title-card ui-search-link")
+                elements_a = soup.find_all('a', class_="poly-component__title")
 
                 """ Second loop for getting all the urls for the almost 54 products. """
                 
@@ -55,7 +67,7 @@ class Scraper:
                     # If the url exists then add it to a dictionary, and then inserting it to the Mongo DB urls collection.
                     if url:
                         url_dict = {"url": url}
-                        db_client.monguito.urls.insert_one(url_dict)
+                        db_client.monguito[self.urls_collection_name].insert_one(url_dict)
                         print(f"URL stored: {url}")
             
             # This error handle is for preventing the running of the API to die if there's a problem scraping the urls.
@@ -68,16 +80,8 @@ class Scraper:
 
     async def get_data(self):
 
-        # Checking if the collection data already exists.
-        if 'data' in db_client.monguito.list_collection_names():
-
-            # And if exists, delete it.
-            db_client.monguito['data'].drop()
-            
-            print(f"The collection (data) has been deleted.")
-
         # Querying the collection urls for the Mongo DB.
-        url_collection = db_client.monguito.urls.find({})
+        url_collection = db_client.monguito[self.urls_collection_name].find({})
 
         # For to pass through all the documents of the collection urls.
         for document in url_collection:
@@ -150,7 +154,7 @@ class Scraper:
                     }
 
                     # Inserting the dictionary with all the scraped data of a product into the data collection of the Mongo DB.
-                    data_insert = db_client.monguito.data.insert_one(data_dict)
+                    data_insert = db_client.monguito[self.data_collection_name].insert_one(data_dict)
 
                     # Fixing the type of the id cause it generates problems for the printing in console.
                     data_dict["_id"] = str(data_insert.inserted_id)
@@ -173,8 +177,10 @@ class Scraper:
 
 # Example of usage and testing of the scraper.
 async def main():
+    
+    product_to_scrape = "laptop"
     # Create an instance of the Scraper class with a product name.
-    scraper = Scraper("laptop")
+    scraper = Scraper(product_to_scrape)
     
     # Run the get_urls method to fetch URLs.
     await scraper.get_urls()
