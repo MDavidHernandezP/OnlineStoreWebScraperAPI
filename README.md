@@ -64,14 +64,14 @@ This folder contains all the files, created or used for the Data Analysis part o
 
     ```bash
     git clone -b master git@github.com:MDavidHernandezP/OnlineStoreWebScraperAPI.git
-    cd "the proyect directory"
+    cd "the project directory"
     ```
     
     OR:
 
     ```bash
     git clone https://github.com/MDavidHernandezP/OnlineStoreWebScraperAPI.git
-    cd "the proyect directory"
+    cd "the project directory"
     ```
 
 2. Build and run the Docker containers:
@@ -377,7 +377,7 @@ This project was originally created by a group team of Data Engineering Students
 4. JANETH GUADALUPE VALDIVIA PEREZ
 5. ESTHER GUADALUPE APAZA HACHO
 
-Then it was reinvented for its improvement and is being mantained by:
+Then it was reinvented for its improvement and is being maintained by:
 
 1. MARIO DAVID HERNÁNDEZ PANTOJA
 
